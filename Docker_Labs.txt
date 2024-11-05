@@ -22,9 +22,9 @@ docker run hello-world
 
 Task 2: Basic Commands to run the Container in Interactive mode
 
-docker pull ubuntu
-docker image ls
-docker run -it --name ct1 ubuntu
+docker pull ubuntu (download ubuntu)
+docker image ls (to cxheck if downloaded)
+docker run -it --name ct1 ubuntu (to go interactive mode and give the container a name)
 touch f1 f2 f3
 ls
 exit
@@ -32,16 +32,16 @@ docker ps
 docker ps -a
 docker run -it --name ct2 ubuntu
 
-Press Crtl+P+Q to switch the terminal to Docke Host.
+Press Crtl+P+Q to switch the terminal to Docke Host.(exit without stopping container)
 
 docker ps
-docker exec -it ct2 /bin/sh
+docker exec -it ct2 /bin/sh (to goinside the conainer using the sheel, so that even if you exit it wont stop)
 exit
 docker ps
 docker attach ct2
 exit
-docker ps
-docker ps -a
+docker ps (to cehcek the ststus of the cointainers)
+docker ps -a (to check the exited containers status)
 
 Task 3: Port Mapping from Docker Host to container
 
