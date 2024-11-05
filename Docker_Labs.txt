@@ -38,8 +38,8 @@ docker ps
 docker exec -it ct2 /bin/sh (to goinside the conainer using the sheel, so that even if you exit it wont stop)
 exit
 docker ps
-docker attach ct2
-exit
+docker attach ct2 (eagain entering ct2)
+exit (this time container will be stopped)
 docker ps (to cehcek the ststus of the cointainers)
 docker ps -a (to check the exited containers status)
 
