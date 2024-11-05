@@ -11,7 +11,7 @@ apt update -y
 apt install curl -y
 curl -SSL https://get.docker.com/ | sh
 service docker status
-usermod -aG docker ubuntu
+usermod -aG docker ubuntu (ubuntu user can run without using sudo command, which is why appended ubuntu user to docker group)
 docker --version
 
 Lab 2: Basic Docker Commands
