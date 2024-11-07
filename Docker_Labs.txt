@@ -59,15 +59,16 @@ docker image ls
 docker image rm < replace image id >
 
 
-Lab 3: Working with volume mounts in Docker
+Lab 3: Working with volume mounts in Docker (if idf we stop the container data will be there localy which is data persistance)
 
 Task 1: Starting Docker Containers Bind Mounts
 
 mkdir /home/ubuntu/share
-echo 'Hello From Docker Host' > /home/ubuntu/share/index.html
-docker run -it --name container1 -p 80:80 -v /home/ubuntu/share:/var/www/html ubuntu:18.04 /bin/bash
+echo 'Hello From Docker Host' > /home/ubuntu/share/index.html (i am outside the container i mean i am curretly at the host/instance)
+docker run -it --name container1 -p 80:80 -v /home/ubuntu/share:/var/www/html ubuntu:18.04 /bin/bash (-p: port mapping, -v : path mapping//through this path mapping whatever we do in one path, other path will have same as well// ubuntu is the new image we are cretaing with 18.04 version, loogin thorugh shell, cretaing container-container1 using run command)
+//No we have install a web server-apache2 // rememebr, once run the above command you will be inside that newly created container- container1
 apt-get update -y && apt-get install apache2 -y
-service apache2 start
+service apache2 start(startr apache and chcek the status with below command)
 service apache2 status
 echo 'Hello From Container1' > /var/www/html/index.html 
 Press Ctrl+P+Q, to switch back to Host
