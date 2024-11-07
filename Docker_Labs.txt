@@ -206,9 +206,9 @@ docker image ls -a
 Self Exercise 2: Docker Lifecycle 
 
 docker pull httpd
-docker image ls
-docker image history httpd
-docker container create httpd
+docker image ls ( or docker images tocheck if httpd is installed)
+docker image history httpd (how httd is created)
+docker container create httpd (create a container suing a n image httpd)
 docker container ls -a
 docker container start < replace container id/name >
 docker container ls
@@ -219,16 +219,16 @@ docker container pause < replace container id/Name >
 docker container ls -a
 docker container unpause < replace container id/Name >
 docker container ls -a
-docker exec -it < replace container id/name > bash
+docker exec -it < replace container id/name > bash (to go inside the cont, and bash wont let this exit)
 cd htdocs
 apt update
 apt install wget -y
-rm index.html
-wget files.cloudthat.training/devops/docker-essentials/index.html
+rm index.html (removed the index.html)
+wget files.cloudthat.training/devops/docker-essentials/index.html ( agian crtaed the index.html file inside htdocs)
 exit
-docker commit < replace container id/name > myhttpd:version1
+docker commit < replace container id/name > myhttpd:version1 (create anthoer image with the changes made above// cretea new image using exiting image, so myhttpd new image will be created nad version is 1)
 docker image ls
-docker run -d -p 8080:80 myhttpd:version1
+docker run -d -p 8080:80 myhttpd:version1 (d=detach means run in backgrnd, p for port) (container is created, nowm, with docketr ps commnad check the container is created or not, it shoud be crrated)
 curl < public IP>:8080
 docker container ls
 docker logs < replace container id/name >
