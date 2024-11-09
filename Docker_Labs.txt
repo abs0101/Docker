@@ -45,7 +45,7 @@ docker ps -a (to check the exited containers status)
 
 Task 3: Port Mapping from Docker Host to container
 
-docker run -d -p 80:80 httpd
+docker run -d -p 80:80 httpd //this is bind mounting
 docker ps
 docker exec -it < replace container id/name > /bin/bash
 exit
@@ -252,7 +252,7 @@ docker volume inspect ct-volume1
 
 Task 2: Launching a Nginx container mapped to a specific docker volume and verification
 
-docker run -d -p 80:80 --name=nginx-container --mount src=ct-volume1,dst=/usr/share/nginx/html nginx
+docker run -d -p 80:80 --name=nginx-container --mount src=ct-volume1,dst=/usr/share/nginx/html nginx (VOLUME MOUNT)
 docker ps
 docker container inspect nginx-container
 ls /var/lib/docker/volumes/ct-volume1/_data/ 
@@ -282,5 +282,5 @@ docker volume ls
 
 Task 4: Create a container with tmpfs mount and verify it
 
-docker run -d -it --name tmpmount --mount type=tmpfs,destination=/app nginx:latest
+docker run -d -it --name tmpmount --mount type=tmpfs,destination=/app nginx:latest (Temprrary moount)
 docker container inspect tmpmount
