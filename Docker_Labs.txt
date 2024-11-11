@@ -187,8 +187,9 @@ docker ps
 
 Self Exercise 1: Pushing the image to DockerHub
 
-docker login
+docker login -u < username>
 docker tag ct-wordpress:v1 <replace your dockerhub account name>/ct-wordpress:v1
+docker tag ct-wordpress:v1 iab0101/ct-wordpress:v1
 docker image ls
 
 docker push <replace your dockerhub account name>/ct-wordpress:v1
